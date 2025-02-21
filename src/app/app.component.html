@@ -1,1 +1,23 @@
-<h1>Soy una Blog de Angular</h1>
+
+<header>
+  <h1>Blog Andalucía</h1>
+</header>
+<main>
+
+  <div class="mainForm">
+
+    <section class="blogForm">
+      <app-blog-form></app-blog-form>
+    </section>
+  
+    <section class="blogList">
+      <app-blog-list [blogs] = "blogList"></app-blog-list>
+    </section>
+
+  </div>
+
+  <section class="mainContent">
+    <app-blog-content></app-blog-content>
+  </section>
+
+</main>

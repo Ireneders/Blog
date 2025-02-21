@@ -1,95 +1,52 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*reset*/
-*, *::before, *::after{
-    box-sizing: border-box; 
+header{
+    background-color:var(--color-primary);
+    color: var(--color-white);
+    padding: 0px;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
 }
 
-*{
-    margin: 0; 
-    padding: 0; 
+header h1{
+    font-style: italic;
 }
 
-ul[role='list'], ol[role='list']{
-    list-style: none; 
+main{
+    background-color: tomato;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    font-family: "Montserrat", sans-serif;
 }
 
-html:focus-within{
-    scroll-behavior: smooth; 
+.mainForm{
+    display: flex;
+    gap: 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
-a:not([class]){
-    text-decoration-skip-ink: auto; 
+.mainForm .blogForm{
+    background-color: white;
+    border: 3px var(--color-primary) solid;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    padding: 10px;
+    flex-basis: 50%;
+    
 }
 
-img, picture, svg, video, canvas{
-    max-width: 100%;
-    height: auto; 
-    vertical-align: middle; 
-    font-style: italic; 
-    background-repeat: no-repeat; 
-    background-size: cover;
+.mainForm .blogList{
+    background-color: white;
+    padding: 10px;
+    flex-basis: 50%;
 }
 
-input, button, textarea, select{
-    font: inherit; 
-}
-
-@media (prefers-reduced-motion: reduce){
-    html:focus-within {
-        scroll-behavior: auto;
-    }
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-        transition: none;
-    }
-}
-
-body, html{
-    height: 100%; 
-    scroll-behavior: smooth; 
+.mainContent{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    background-color: white;
 }
