@@ -12,7 +12,7 @@ export class BlogsService {
   insert(blog: IBlog): any{
 
     this.arrayBlogs.push(blog)
-    return {status: true, msg:'entrada creada'}
+    return {status: true, msg:'Entrada publicada con exito'}
   }
 
   getAll() : IBlog[] {
