@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { IBlog } from '../../interfaces/iblog.interfaces';
+import { BlogsService } from '../../services/blogs.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-blog-form',
@@ -9,5 +11,38 @@ import { IBlog } from '../../interfaces/iblog.interfaces';
   styleUrl: './blog-form.component.css'
 })
 export class BlogFormComponent {
- newBlog : IBlog = {tittle: '', img: '', content :'', date: ''}
+
+  blogService = inject(BlogsService)
+  blogs: IBlog[] = []
+
+ getDataForm(blogForm: NgForm) {
+  let newBlog: IBlog = blogForm.value
+
+  if (!newBlog.title.trim() || !newBlog.img.trim() || !newBlog.content.trim() || !newBlog.date.trim()) {
+    Swal.fire({
+      title: 'Error',
+      text: 'Todos los campos son obligatorios.',
+      icon: 'error',
+      confirmButtonText: 'Entendido'
+    });
+    return;
+  }
+
+  let response= this.blogService.insert(newBlog)
+
+  if (response.status){
+    blogForm.reset()
+    Swal.fire({
+      title: 'Felicidades!',
+      text: response.msg,
+      icon: 'success',
+      confirmButtonText: 'Gracias'
+    })
+  }
+ }
+
+
+ ngOnInit(){
+  this.blogs = this.blogService.getAll()
+}
 }

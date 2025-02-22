@@ -13,10 +13,6 @@ import { IBlog } from './interfaces/iblog.interfaces';
 })
 export class AppComponent {
 
-  blogList: IBlog [] = [
-    {tittle: 'Cádiz', img: 'url', content :'lorem', date: '21/02/2025'},
-    {tittle: 'Sevilla', img: 'url', content :'lorem', date: '18/02/2025'},
-  ]
-} 
+}
 
 

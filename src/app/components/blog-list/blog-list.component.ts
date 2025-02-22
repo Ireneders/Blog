@@ -1,5 +1,6 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, inject, Input, input } from '@angular/core';
 import { IBlog } from '../../interfaces/iblog.interfaces';
+import { BlogsService } from '../../services/blogs.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -9,11 +10,22 @@ import { IBlog } from '../../interfaces/iblog.interfaces';
 })
 export class BlogListComponent {
 
- @Input() blogs: IBlog[] = [];
- text: string= ""
+  blogService = inject(BlogsService)
+  blogs: IBlog[] = []
+  text: string= ""
 
- ngOnChanges (){
-  console.log (this.blogs)
- }
+  clickBlog (event: any){
+    console.log ('Hola' + event.target.value)
+  }
+  
+  truncateText(text: string, maxCharacters: number): string {
+    return text.length > maxCharacters ? text.slice(0, maxCharacters) + "..." : text;
+  }
+
+  ngOnInit(){
+    this.blogs = this.blogService.getAll()
+  }
+
 
 }
+

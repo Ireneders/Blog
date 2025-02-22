@@ -28,6 +28,16 @@ main{
     padding-bottom: 20px;
 }
 
+
+@media (width <= 800px) {
+    .mainForm{
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+}
+
 .mainForm .blogForm{
     background-color: white;
     border: 3px var(--color-primary) solid;

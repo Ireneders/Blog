@@ -1,1 +1,23 @@
-<p>blog-form works!</p>
+<section class="mb-3 ms-3 me-3" >
+    <h2>Añade tu entrada de blog</h2>
+    <form #blogForm = "ngForm" (ngSubmit)="getDataForm(blogForm)">
+        <div>
+            <label class="form-label" for="title">Título</label>
+            <input class= "form-control" type="text" id="title" name="title" ngModel placeholder="Introduce el título"  >
+        </div>
+        <div>
+            <label class="form-label" for="img">Imagen (URL)</label>
+            <input class= "form-control" type="url" id="img" name="img" ngModel  placeholder="https://www.ejemplo.com/imagen.jpg">
+        </div>
+        <div>
+            <label class="form-label" for="date">Fecha</label>
+            <input class= "form-control" type="date" id="date" name="date" ngModel  >
+        </div>
+        <div>
+            <label class="form-label" for="content">Contenido</label>
+            <textarea class= "form-control" rows="8" type="text" id="content" placeholder="Introduce el contenido de la entrada" name="content" ngModel  ></textarea>
+        </div>
+        <input type="submit" value="Enviar" class=" btn btn-success m-3">
+    </form>
+
+</section>
