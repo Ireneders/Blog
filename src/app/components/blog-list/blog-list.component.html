@@ -9,8 +9,7 @@
                 <div class="blogInfo">
                     <h3>{{blog.title}}</h3>
                     <p>Fecha: {{blog.date}}</p>
-                    <p>{{ truncateText(blog.content, 125) }}</p>
-                    <button value= "{{blog.date}}" class="buttonMas" (click)="clickBlog($event)">VER ENTRADA +</button>
+                    <p>{{blog.content}}</p>
                 </div>
             </article>
          }

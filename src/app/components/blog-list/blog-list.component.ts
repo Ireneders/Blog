@@ -14,18 +14,10 @@ export class BlogListComponent {
   blogs: IBlog[] = []
   text: string= ""
 
-  clickBlog (event: any){
-    console.log ('Hola' + event.target.value)
-  }
-  
-  truncateText(text: string, maxCharacters: number): string {
-    return text.length > maxCharacters ? text.slice(0, maxCharacters) + "..." : text;
-  }
 
   ngOnInit(){
     this.blogs = this.blogService.getAll()
   }
-
 
 }
 

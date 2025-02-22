@@ -12,7 +12,6 @@ header h1{
 }
 
 main{
-    background-color: tomato;
     max-width: 1400px;
     margin: 0 auto;
     padding-left: 16px;
@@ -23,19 +22,10 @@ main{
 
 .mainForm{
     display: flex;
+    flex-direction: column;
     gap: 20px;
     padding-top: 50px;
     padding-bottom: 20px;
-}
-
-
-@media (width <= 800px) {
-    .mainForm{
-        display: flex;
-        flex-direction: column;
-    }
-
-    
 }
 
 .mainForm .blogForm{
@@ -52,11 +42,4 @@ main{
     background-color: white;
     padding: 10px;
     flex-basis: 50%;
-}
-
-.mainContent{
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    background-color: white;
 }
